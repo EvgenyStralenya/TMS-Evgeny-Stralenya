@@ -41,7 +41,7 @@ function generateOdds(len) {
    return new Array(len).fill(0).reduce(function(totalMass , _){
       totalMass.push(2 * totalMass.length + 1);
       return totalMass;
-      }, []);
+   }, []);
 }
 
 
@@ -60,7 +60,7 @@ function doubleArray(arr) {
    return arr.reduce(function(totalMass, item){
       totalMass.push(item);
       return totalMass;
-      }, arr);
+   }, arr);
 }
 
 
@@ -78,7 +78,7 @@ function doubleArray(arr) {
 function getArrayOfPositives(arr) {
    return arr.filter(function(item){
       if (item > 0){
-      return true;
+         return true;
       };
    });
 }

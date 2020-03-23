@@ -23,7 +23,7 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
-   throw new Error('Not implemented');
+   return arr.indexOf(value);
 }
 
 /**
@@ -38,7 +38,10 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-   throw new Error('Not implemented');
+   return new Array(len).fill(0).reduce(function(totalMass , _){
+      totalMass.push(2 * totalMass.length + 1);
+      return totalMass;
+      }, []);
 }
 
 
@@ -54,7 +57,10 @@ function generateOdds(len) {
  *    [] => [] 
  */
 function doubleArray(arr) {
-   throw new Error('Not implemented');
+   return arr.reduce(function(totalMass, item){
+      totalMass.push(item);
+      return totalMass;
+      }, arr);
 }
 
 
@@ -70,7 +76,11 @@ function doubleArray(arr) {
  *    [] => [] 
  */
 function getArrayOfPositives(arr) {
-   throw new Error('Not implemented');
+   return arr.filter(function(item){
+      if (item > 0){
+      return true;
+      };
+   });
 }
 
 /**

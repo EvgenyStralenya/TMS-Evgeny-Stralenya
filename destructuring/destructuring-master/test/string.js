@@ -10,7 +10,7 @@ describe('Destructuring also works on strings', () => {
     assert.deepEqual([a, b, c], ['a', 'b', 'c']);
   });
   it('missing characters are undefined', () => {
-    const [a, c] = 'ab'.split(',');
+    const [a, c] = ['ab'];
     assert.equal(c, void 0);
   });
   it('unicode character work too', () => {

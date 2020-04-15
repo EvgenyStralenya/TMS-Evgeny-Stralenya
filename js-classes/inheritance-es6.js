@@ -68,10 +68,14 @@ class Car {
 }
 
 class Nissan extends Car {
-    constructor(name, model, year, color, maxSpeed, fuelCapacity = 60, fuelConsumption = 10, interiorColor) {
-        super(name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption);
-        this.interiorColor = interiorColor;
+    constructor() {
+    	const args = [].slice.call(arguments)
+		const interiorColor = args.pop()
+		super(...args);
+		this.interiorColor = interiorColor;
     }
+
+
 
     changeInteriorColor(color) {
 		if ((typeof(color) === 'string') && (isNaN(color))) {
@@ -88,8 +92,10 @@ class Nissan extends Car {
 }
 
 class Volvo extends Car {
-	constructor(name, model, year, color, maxSpeed, fuelCapacity = 60, fuelConsumption = 10, safetyRating) {
-        super(name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption);
+	constructor() {
+		const args = [].slice.call(arguments)
+        const safetyRating = args.pop()
+		super(...args);
         this.safetyRating = safetyRating;
     }
 
@@ -116,8 +122,10 @@ class Volvo extends Car {
 }
 
 class BMW extends Car {
-	constructor(name, model, year, color, maxSpeed, fuelCapacity = 60, fuelConsumption = 10, electricMotorSpeed) {
-		super(name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption);
+	constructor() {
+		const args = [].slice.call(arguments)
+        const electricMotorSpeed = args.pop()
+		super(...args);
 		this.electricMotorSpeed = electricMotorSpeed;
 	}
 
@@ -129,15 +137,15 @@ class BMW extends Car {
 	}
 }
 
-const opel = new Car('Opel', 'Vectra C', 2007, 'gray', 115, 61, 10.5);
+const opel = new Car('Opel', 'Vectra C', 2007, 'gray', 115, 61, 6.5);
 const nissan = new Nissan('Nissan', 'Skyline R34', 1999, 'blue', 125, 65, 12, 'black');
 const volvo = new Volvo('Volvo', 's80', 2004, 'black', 110, 80, 11.5, 4.7);
-const bmw = new BMW('BMW', '540i E60', 2003, 'black', 100, 72, 13.5, 145);
+const bmw = new BMW('BMW', '540i E60', 2003, 'black', 105, 72, 13.5, 145);
 
 console.log(opel.getFullName());
 console.log(opel.getAge());
 console.log(opel.changeColor('gRey'));
-console.log(opel.calculateWay(3000, 9));
+console.log(opel.calculateWay(800, 55));
 
 console.log('');
 

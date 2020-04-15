@@ -70,8 +70,10 @@ function extend(Child, Parent) {
     Child.prototype.constructor = Child;
 }
 
-function Nissan(name, model, year, color, maxSpeed, fuelCapacity = 60, fuelConsumption = 10, interiorColor){
-	Car.apply(this, arguments);
+function Nissan() {
+	const args = [].slice.call(arguments)
+	const interiorColor = args.pop()
+	Car.apply(this, args);
 	this.interiorColor = interiorColor;
 }
 
@@ -91,9 +93,10 @@ Nissan.prototype.changeInteriorColor = function(color){
 	return 'Incorrect interior color value';
 }
 
-function Volvo(name, model, year, color, maxSpeed, fuelCapacity = 60, fuelConsumption = 10, safetyRating){
-	Car.apply(this, arguments);
-
+function Volvo() {
+	const args = [].slice.call(arguments)
+	const safetyRating = args.pop()
+	Car.apply(this, args);
 	this.safetyRating = safetyRating;
 }
 
@@ -121,9 +124,10 @@ Volvo.prototype.getRating = function(highMark, lowMark){
 	} else return `The car has medium safety`;
 }
 
-function BMW(name, model, year, color, maxSpeed, fuelCapacity = 60, fuelConsumption = 10, electricMotorSpeed){
-	Car.apply(this, arguments);
-
+function BMW() {
+	const args = [].slice.call(arguments)
+	const electricMotorSpeed = args.pop()
+	Car.apply(this, args);
 	this.electricMotorSpeed = electricMotorSpeed;
 }
 

@@ -60,3 +60,9 @@ input.input {
 input:focus {
     outline: none;
 }
+
+#map {
+    width: 80vw;
+    height: 50vh;
+    margin: 0 auto;
+}
